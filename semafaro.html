@@ -1,0 +1,67 @@
+<html>
+<head></head>
+
+<body>
+	
+	<table>
+		<tr><td>
+<p id="botao1"></p>
+<p id="segundos1"></p>
+<img id="MinhaImagem1" src="verde.png" style="width:100px">
+			</td>
+			<td>
+<p id="botao2"></p>
+<p id="segundos2"></p>
+<img id="MinhaImagem2" src="amarelo.png" style="width:100px">
+			</td>
+			<td>
+<p id="botao3"></p>
+<p id="segundos3"></p>
+<img id="MinhaImagem3" src="vermelho.png" style="width:100px">
+			</td>
+			<td>
+<p id="botao4"></p>
+<p id="segundos4"></p>
+<img id="MinhaImagem4" src="vermelho.png" style="width:100px">
+			</td>
+	</tr>
+</table>
+<script>
+var tempo1 = 5000; //segundos
+var timer=setInterval(controle1,tempo1);
+var img1 = document.querySelector("#MinhaImagem1");
+var semaforo1 = "verde";
+
+function controle1(){
+			if (semaforo1 == "verde" ){
+			img1.setAttribute('src', 'amarelo.png');
+			semaforo1 = "amarelo1";
+			tempo1 = 1000;
+			}else{
+			if (semaforo1 == "amarelo1" ){
+			img1.setAttribute('src', 'vermelho.png');
+			semaforo1 = "vermelho";
+			tempo1 = 5000;
+			}	else{
+
+				if (semaforo1 == "vermelho" ){
+			img1.setAttribute('src', 'amarelo.png');
+			semaforo1 = "amarelo2";
+			tempo1 = 1000;
+			}else{if (semaforo1 == "amarelo2" ){
+			img1.setAttribute('src', 'verde.png');
+			semaforo1 = "verde";
+			tempo1 = 5000;} 
+			}}}
+				incluiSemaforo1();
+			}
+
+			function incluiSemaforo1(){
+			document.getElementById("botao1").innerHTML = semaforo1;
+			document.getElementById("segundos1").innerHTML = tempo1;
+}
+</script>
+
+</body>
+
+</html>
